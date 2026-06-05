@@ -13,31 +13,28 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain apiSecurity(HttpSecurity http) throws Exception {
+    public SecurityFilterChain apiSecurity(HttpSecurity http) {
 
-        http.oauth2ResourceServer(oauth2 ->
-                oauth2.jwt(Customizer.withDefaults()));
-
-        http.authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                        "/swagger-ui/**",
-                        "/swagger-ui.html",
-                        "/v3/api-docs/**"
-                ).permitAll()
-
-                .requestMatchers(HttpMethod.GET, "/api/v1/categories/**")
-                .permitAll()
-
-                .anyRequest()
-                .authenticated()
+        // Security mechanism (OAUTH2 & JWT)
+        http.oauth2ResourceServer(oauth2 -> oauth2
+                .jwt(Customizer.withDefaults())
         );
 
-        http.sessionManagement(session ->
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.authorizeHttpRequests(endpoints -> endpoints
+                .requestMatchers("/v3/api-docs/**",
+                        "/swagger-ui/**",
+                        "/swagger-ui.html").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/v1/categories/**").permitAll()
+                .anyRequest().authenticated()
+        );
+
+        http.sessionManagement(state -> state
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.csrf(AbstractHttpConfigurer::disable);
         http.formLogin(AbstractHttpConfigurer::disable);
 
         return http.build();
     }
+
 }

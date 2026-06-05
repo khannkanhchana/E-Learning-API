@@ -1,8 +1,8 @@
 package co.istad.kanhchana.elearninga01m1.features.category;
 
-import co.istad.kanhchana.elearninga01m1.dto.request.categoryrequest.CreateCategoryRequest;
-import co.istad.kanhchana.elearninga01m1.dto.request.categoryrequest.UpdateCategoryRequest;
-import co.istad.kanhchana.elearninga01m1.dto.response.categoryresponse.CategoryResponse;
+import co.istad.kanhchana.elearninga01m1.features.category.dto.request.categoryrequest.CreateCategoryRequest;
+import co.istad.kanhchana.elearninga01m1.features.category.dto.request.categoryrequest.UpdateCategoryRequest;
+import co.istad.kanhchana.elearninga01m1.features.category.dto.response.categoryresponse.CategoryResponse;
 import org.springframework.data.domain.Page;
 
 public interface CategoryService {

@@ -1,4 +1,4 @@
-package co.istad.kanhchana.elearninga01m1.dto.request.categoryrequest;
+package co.istad.kanhchana.elearninga01m1.features.category.dto.request.categoryrequest;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

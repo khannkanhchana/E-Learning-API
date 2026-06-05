@@ -1,4 +1,4 @@
-package co.istad.kanhchana.elearninga01m1.dto.response.categoryresponse;
+package co.istad.kanhchana.elearninga01m1.features.category.dto.response.categoryresponse;
 
 public record CategoryResponse(
         Integer id,

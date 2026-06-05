@@ -1,4 +1,4 @@
-package co.istad.kanhchana.elearninga01m1.dto.response;
+package co.istad.kanhchana.elearninga01m1.features.category.dto.response;
 
 import lombok.Builder;
 
