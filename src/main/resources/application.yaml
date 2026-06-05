@@ -1,15 +1,22 @@
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+  application:
+    name: elearning-a01-m1
+
   datasource:
     url: jdbc:postgresql://localhost:5432/db_elearning_a1_m1
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: 111999
-  application:
-    name: elearning-a01-m1
 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/master
 
 server:
   port: 8081
