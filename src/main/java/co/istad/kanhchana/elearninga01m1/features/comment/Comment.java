@@ -1,6 +1,7 @@
 package co.istad.kanhchana.elearninga01m1.features.comment;
 
 
+import co.istad.kanhchana.elearninga01m1.config.auditing.BasedEntity;
 import co.istad.kanhchana.elearninga01m1.features.video.Video;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "comments")
-public class Comment {
+public class Comment extends BasedEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

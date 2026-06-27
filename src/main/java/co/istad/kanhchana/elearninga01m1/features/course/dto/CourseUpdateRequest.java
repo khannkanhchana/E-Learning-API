@@ -1,46 +1,44 @@
 package co.istad.kanhchana.elearninga01m1.features.course.dto;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
-public record CreateCourseRequest(
-        @NotBlank
+public record CourseUpdateRequest(
+
         @Size(max = 255)
         String slug,
 
-        @NotBlank
         @Size(max = 255)
         String keyword,
 
-        @NotBlank
         @Size(max = 255)
         String title,
+
         String description,
 
-        @NotBlank
         @Size(max = 255)
         String thumbnail,
 
         @Positive
-        @NotNull
         @Max(50)
         Float totalHours,
 
-        @NotBlank
         @Size(max = 50)
         String level,
 
         @Positive
-        @NotNull
         BigDecimal price,
 
         @Positive
-        @NotNull
         Float discountPercent,
 
-        @Positive
-        @NotNull
-        Integer categoryId
+        Integer categoryId,
+
+        String instructorId,
+
+        Boolean isPublished
 ) {
 }

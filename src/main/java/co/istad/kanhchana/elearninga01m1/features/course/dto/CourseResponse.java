@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Builder
 public record CourseResponse(
     Integer id,
- String slug,
+    String slug,
          String keyword, // use for SEO
          String title,
          String description,
@@ -20,9 +20,11 @@ public record CourseResponse(
         String level,
         BigDecimal price,
         Float discountPercent,
-        LocalDateTime createdAt,
-        LocalDateTime updatedAt,
-        CategoryResponse category
+//        LocalDateTime createdAt,
+//        LocalDateTime updatedAt,
+        CategoryResponse category,
+        String instructorName,
+        Boolean isPublished
 //        String instructorName
 
 

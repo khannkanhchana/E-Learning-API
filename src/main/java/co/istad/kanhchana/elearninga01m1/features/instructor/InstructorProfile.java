@@ -1,6 +1,7 @@
 package co.istad.kanhchana.elearninga01m1.features.instructor;
 
 
+import co.istad.kanhchana.elearninga01m1.config.auditing.BasedEntity;
 import co.istad.kanhchana.elearninga01m1.features.course.Course;
 import jakarta.persistence.*;
 import jdk.dynalink.linker.LinkerServices;
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "instructor_profiles")
-public class InstructorProfile {
+public class InstructorProfile extends BasedEntity {
     public InstructorProfile(String id){
         this.userId = id;
     }

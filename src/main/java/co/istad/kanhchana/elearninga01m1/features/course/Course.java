@@ -1,5 +1,6 @@
 package co.istad.kanhchana.elearninga01m1.features.course;
 
+import co.istad.kanhchana.elearninga01m1.config.auditing.BasedEntity;
 import co.istad.kanhchana.elearninga01m1.features.category.Category;
 import co.istad.kanhchana.elearninga01m1.features.enrollment.Enrollment;
 import co.istad.kanhchana.elearninga01m1.features.instructor.InstructorProfile;
@@ -20,7 +21,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "courses")
-public class Course {
+public class Course extends BasedEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -35,8 +36,8 @@ public class Course {
     private String level;
     private BigDecimal price;
     private Float discountPercent;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+//    private LocalDateTime createdAt;
+//    private LocalDateTime updatedAt;
 
     @ManyToOne
     private Category category;
@@ -47,7 +48,7 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Enrollment> enrollments;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_id")
     private InstructorProfile instructorProfile;
 

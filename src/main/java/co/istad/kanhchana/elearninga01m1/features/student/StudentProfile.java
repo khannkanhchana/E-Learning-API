@@ -1,6 +1,7 @@
 package co.istad.kanhchana.elearninga01m1.features.student;
 
 
+import co.istad.kanhchana.elearninga01m1.config.auditing.BasedEntity;
 import co.istad.kanhchana.elearninga01m1.features.enrollment.Enrollment;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "student_profiles")
-public class StudentProfile {
+public class StudentProfile extends BasedEntity {
     @Id
     private String userId;
 
