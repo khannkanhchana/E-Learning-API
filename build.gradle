@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies{
+
+    implementation 'org.keycloak:keycloak-admin-client:26.0.9'
     //    map struct
     implementation 'org.mapstruct:mapstruct:1.6.3'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'

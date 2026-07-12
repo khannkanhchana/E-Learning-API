@@ -12,6 +12,7 @@ spring:
     hibernate:
       ddl-auto: update
 
+
   security:
     oauth2:
       resourceserver:
@@ -22,5 +23,11 @@ server:
   port: 8081
 
 #  http://localhost:8080/realms/master
+keycloak:
+  server-url:  http://localhost:8080
+  client-id: spring-boot-elearning
+  client-secret: giXU1q5B8F5nuwAP9cSpdklQhMRAqyA0
+  realm: master
+  target-realm: elearning
 
 
